@@ -8,25 +8,19 @@ import com.company.services.ComputerService;
 public class Main {
 
     public static void main(String[] args) {
+
         ComputerService computerService = new ComputerService();
-        final int computers = 26;
-        for(int i = 1; i < computers; i++) {
-            Computer computer = new Computer(i);
-            computerService.addComputer(computer);
-        }
+        final int computers = computerService.createComputers(26);
 
         StudentService studentService = new StudentService();
-        final int students = 100;
-        for(int i = 0; i < students; i++) {
-            Student student = new Student("student"+(i!=0?"_"+i:""),i+1,"java");
-            studentService.addStudent(student);
-        }
+        final int students = studentService.createStudents(100);
 
-        for(int i = 0; i < studentService.getStudents().size();i++)
-            computerService.createFile(studentService.getStudents().get(i),computerService.getComputers().get(i%computerService.getComputers().size()));
+        computerService.createFiles(computerService.getComputers(),studentService.getStudents());
 
-        System.out.println(studentService.toString());
+        System.out.println("Students in student service");
+        studentService.printStudents();
 
-        System.out.println(computerService.toString());
+        System.out.println("\nComputers in computer service");
+        computerService.printComputers();
     }
 }
