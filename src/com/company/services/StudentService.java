@@ -4,7 +4,7 @@ import com.company.entities.Student;
 
 import java.util.ArrayList;
 
-public class StudentService {
+final public class StudentService {
     private ArrayList<Student> students = new ArrayList<Student>();
 
     public void addStudent(Student student) {

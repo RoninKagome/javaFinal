@@ -6,7 +6,7 @@ import com.company.entities.Student;
 
 import java.util.ArrayList;
 
-public class ComputerService {
+final public class ComputerService {
     private ArrayList<Computer> computers = new ArrayList<Computer>();
 
     public void addComputer(Computer computer) {

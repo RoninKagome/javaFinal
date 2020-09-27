@@ -2,7 +2,7 @@ package com.company.entities;
 
 import java.util.ArrayList;
 
-public class Computer {
+final public class Computer {
     private int ip;
     private ArrayList<File> files = new ArrayList<File>();
 

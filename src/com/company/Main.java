@@ -5,7 +5,11 @@ import com.company.entities.Student;
 import com.company.services.StudentService;
 import com.company.services.ComputerService;
 
-public class Main {
+final public class Main {
+
+    private static final String ANSI_RESET = "\u001B[0m";
+    private static final String ANSI_GREEN = "\u001B[32m";
+    private static final String ANSI_RED = "\u001B[31m";
 
     public static void main(String[] args) {
 
@@ -17,10 +21,12 @@ public class Main {
 
         computerService.createFiles(computerService.getComputers(),studentService.getStudents());
 
-        System.out.println("Students in student service");
+        System.out.println(ANSI_GREEN + "Students in student service" + ANSI_RESET);
+        System.out.println(ANSI_RED + "name,age,works with" + ANSI_RESET);
         studentService.printStudents();
 
-        System.out.println("\nComputers in computer service");
+        System.out.println(ANSI_GREEN + "\nComputers in computer service" + ANSI_RESET);
+        System.out.println(ANSI_RED + "ip, files(names)" + ANSI_RESET);
         computerService.printComputers();
     }
 }

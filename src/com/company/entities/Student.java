@@ -1,6 +1,6 @@
 package com.company.entities;
 
-public class Student {
+final public class Student {
     private String name;
     private int age;
     private String workingWith;

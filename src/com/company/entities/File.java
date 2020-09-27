@@ -1,6 +1,6 @@
 package com.company.entities;
 
-public class File {
+final public class File {
     private String name;
 
     public File(String name) {
